@@ -1,7 +1,10 @@
 'use strict';
 
-angular.module('syrioExampleFrontendApp', ['SyrioFrontendComponents'])
-  .config(['$routeProvider', function ($routeProvider) {
+angular.module('syrioExampleFrontendApp', [
+	'SyrioFrontendComponents',
+	'SyrioHarveyFrontend'
+])
+	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -9,8 +12,12 @@ angular.module('syrioExampleFrontendApp', ['SyrioFrontendComponents'])
       })
 			.when('/login', {
         templateUrl: 'bower_components/syrio_frontend_components/app/views/login.html',
-        controller: 'SyrioFrontendComponents.loginCtrl',
+        controller: 'SyrioFrontendComponents.loginCtrl'
       })
+			.when('/harvey/editor', {
+				templateUrl: 'bower_components/syrio_harvey_frontend/app/views/editor/main.html',
+        controller: 'SyrioHarvey.Editor.mainCtrl'
+			})
       .otherwise({
         redirectTo: '/'
       });

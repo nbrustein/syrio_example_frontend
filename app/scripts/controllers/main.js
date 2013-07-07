@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('syrioExampleFrontendApp')
-  .controller('MainCtrl', ['$scope', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+  .controller('MainCtrl', ['$scope', 'SyrioHarvey.assets', function ($scope, harveyAssets) {
+    $scope.menuItems = [
+      harveyAssets.editorMenuItem
     ];
   }]);
